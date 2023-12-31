@@ -6,17 +6,22 @@ import (
 	"github.com/cg-/bingx/standard"
 )
 
+const BASE_URL string = "https://open-api.bingx.com"
+const DEMO_BASE_URL string = "https://open-api-vst.bingx.com"
+
 type BingX struct {
 	Perpetual *perpetualv2.PerpetualV2
 	Spot      *spot.Spot
 	Standard  *standard.Standard
+	IsDemo    bool
 }
 
-func Create() *BingX {
+func Create(isDemo bool) *BingX {
 	return &BingX{
 		Perpetual: nil,
 		Spot:      nil,
 		Standard:  nil,
+		IsDemo:    isDemo,
 	}
 }
 
