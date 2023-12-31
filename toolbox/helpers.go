@@ -30,14 +30,8 @@ func GenerateQuery(secretkey string, m map[string]string) string {
 		if first {
 			first = false
 			ret = fmt.Sprintf("%s=%s", k, v)
-			fmt.Println("")
-			fmt.Println(ret)
-			fmt.Println("")
 		} else {
 			ret += fmt.Sprintf("&%s=%s", k, v)
-			fmt.Println("")
-			fmt.Println(ret)
-			fmt.Println("")
 		}
 	}
 
